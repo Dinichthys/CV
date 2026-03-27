@@ -114,6 +114,20 @@ strokes, sans-serif fonts are sans (without) these strokes.
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\CVSubheadingDenFirst}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubheadingDen}[2]{
+  \vspace{-14pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\CVSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
@@ -147,7 +161,7 @@ which heading appropriate for the document you are creating.
 \end{minipage}
 \begin{minipage}[c]{0.2\textwidth}
 \begin{tikzpicture}
-    \node at (0,-.7) {\includegraphics[width = 3cm]{Photo.jpg}};
+    \node at (0,-.7) {\includegraphics[width = 3cm]{Фото.png}};
     % if necessary the picture may be moved by changing the at (coordinates)
     % width defines the 'zoom' of the picture
 \end{tikzpicture}
@@ -157,7 +171,7 @@ which heading appropriate for the document you are creating.
     \textbf{\Huge \scshape{Мельников Денис}} \\
     % \scshape sets small capital letters, remove if desired
     \small{\faPhone} \hspace{0.1cm} \small{+7 931 511 58 76} \\
-    \faEnvelope \hspace{0.1cm} \href{den2005425@gmail.com}{\underline{den2005425@gmail.com}}\\
+    \faEnvelope \hspace{0.1cm} \href{den2005425@gmail.com}{\underline{melnikov.denis@phystech.edu}}\\
     \faTelegram \hspace{0.1cm} \href{https://t.me/daikofnetu} {\underline{@daikofnetu}} \\
     % Be sure to use a professional *personal* email address
     \faGithub \hspace{0.1cm} \href{https://www.github.com/dinichthys}{\underline{Dinichthys}} \\
@@ -206,8 +220,23 @@ information though). Whatever order you choose be consistent throughout.
 %      {Degree Achieved}{Years of Study}
 %      {Institution of Study}{Where it is located}
     \CVSubheading
-      {{Бакалавриат $|$ \emph{\small{Первый курс, Средний балл: 8.43}}}}{Сен. 2024 -- Настоящее время}
+      {{Бакалавриат $|$ \emph{\small{Второй курс, Средний балл: 8.56}}}}{Сен. 2025 -- Настоящее время}
       {Физтех-школа радиотехники и компьютерных технологий \\ Московский физико-технический институт}{Долгопрудный, Россия}
+\CVItemListEnd
+
+\section{Дополнительные курсы}
+  \CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Degree Achieved}{Years of Study}
+%      {Institution of Study}{Where it is located}
+    \CVSubheadingDenFirst
+      {{Курс Ильи Рудольфовича Дединского по языку C и языкам ассемблера}}{Сен. 2024 -- Май 2025}
+    \CVSubheadingDen
+      {{Курс Ильи Рудольфовича Дединского по языку C++}}{Сен. 2025 -- Май 2026}
+    \CVSubheadingDen
+      {{Введение в архитектуру вычислительных систем от огранизации СБЕР}}{Фев. 2026 -- Май 2026}
+    \CVSubheadingDen
+      {{Введение в тензорные компиляторы от огранизации СБЕР}}{Фев. 2026 -- Май 2026}
   \CVSubHeadingListEnd
 
 % %-----WORK EXPERIENCE----------------------------------------------------------
@@ -215,6 +244,28 @@ information though). Whatever order you choose be consistent throughout.
 % try to briefly explain what you did and why it is relevant to the position you
 % are seeking
 % \end{comment}
+
+\section{Опыт работы}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What}{When}
+%      {Short Description}{}
+    \CVSubheading
+      {Опыт работы в команде разработчиков компилятора Go}{Июль - Сентябрь 2025}
+      {}{}
+      \small{Стажёр (ассистент-инженер) в компании Huawei на полной ставке. \\ Я дорабатывал определённый оптимизационный пасс в компиляторе, чтобы он рассматривал больше случаев. По итогам моей стажировки мой коммит в официальный репозиторий компилятора был принят и изменения внесены.}
+  \CVSubHeadingListEnd
+
+\section{Опыт преподавания}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What}{When}
+%      {Short Description}{}
+    \CVSubheading
+      {Опыт менторства на курсе Ильи Рудольфовича Дединского}{Сен. 2025 - Май 2026}
+      {}{}
+      \small{Я работал ментором на курсе Ильи Рудольфовича Дединского по языку C и языкам ассемблера для первокурсников на протяжении полного года обучения.}
+  \CVSubHeadingListEnd
 
 % \section{Work Experience}
 %   \CVSubHeadingListStart
@@ -263,17 +314,34 @@ use item list as is shown in the work experience section.
 %      {Title of Work}{When it was done}
 %      {Institution you worked with}{unused}
     \CVSubheading
-      {{Programming Language} $|$ \emph{\small{C, make}}}{\href{https://github.com/Dinichthys/Language}{Language on GitHub}}{}{}
+      {{Compiler} $|$ \emph{\small{C, Cmake, NASM}}}{\href{https://github.com/Dinichthys/Compiler}{Compiler on GitHub}}{}{}
       \small{
-      \textbf{Цель проекта:} Реализовать компилятор для собственного языка программирования под собственную архитектуру.
-Фронтенд компилятора разбивал текст программы на лексемы, по которым строилось абстрактное синтаксическое дерево (AST) с помощью рекурсивного спуска.
-Затем бэкенд транслировал AST в ассемблерные инструкции для функционального симулятора,
+      \textbf{Цель проекта:} Реализовать компилятор для собственного языка программирования под собственную архитектуру, а также NASM.
+Front-end компилятора разбивал текст программы на лексемы, по которым строилось абстрактное синтаксическое дерево (AST) с помощью рекурсивного спуска. Затем оно переводилось в промежуточное представление.
+
+Далее оно оптимизировалось Middle-end'ом, в котором производились следующие оптимизации:
+\begin{itemize}[nosep]
+  \item \textbf{Dead code elimination:} убирал код, который не был достижим.
+  \item \textbf{Common subexpression:} результат одинаковых подвыражений вичислялся единожды.
+  \item \textbf{Unused variables:} неиспользуемые переменные удалялись из программы.
+\end{itemize}
+
+Затем Back-end транслировал IR в ассемблерные инструкции для функционального симулятора,
 который впоследствии преобразовывал их в машинный код и выполнял.
-    %    Implement a compiler for a custom language with its own syntax, targeting a custom architecture.
-    %    The front-end module uses a recursive descent parser to analyze the program text and construct an
-    %    AST (Abstract Syntax Tree). Subsequently, the back-end module translates the AST into assembly code.
-    %    Finally, the assembly code is converted into binary representation, which is executed by the processor from the SPU project.
       }
+    \CVSubheading
+      {{LLVMPass} $|$ \emph{\small{C++, Cmake}}}{\href{https://github.com/Dinichthys/LLVMPass}{LLVMPass on GitHub}}{}{}
+      \small{
+      \textbf{Цель проекта:}
+       Реализовать пасс, который бы строил CFG и DFG, а также инструментировал LLVMIR логирующими инструкциями, а затем собирал полученный профиль и по нему на графе отображал цветами и количеством вызовов горячие и холодные функции и базовые блоки в них.
+}
+    \CVSubheading
+      {{Physics} $|$ \emph{\small{C++, Cmake}}}{\href{https://github.com/Dinichthys/Physics}{Physics on GitHub}}{}{}
+      \small{
+      \textbf{Цель проекта:} Создать физический конструктор разных объектов с возможностью отражения и преломления в них света, а также возможность добавления плагинов. Таким образом, в конечном варианте было 2 плагина - плагин для графической библиотеки (путём его замены можно было перейти с SFML на SDL, например, не переписывая ничего), а также плагин для дорисовки (функционал для рисования различных фигур поверх экрана).
+
+Реализации моих плагинов можно найти в репозиториях - \href{https://github.com/Dinichthys/DR4Backend}{DR4Backend} (плагин графической библиотеки) и \href{https://github.com/Dinichthys/GeomPrimitiveBackend}{GeomPrimitiveBackend} (плагин дорисовки).
+}
     \CVSubheading
       {{SPU} $|$ \emph{\small{C, make}}}{\href{https://github.com/Dinichthys/SPU}{SPU on GitHub}}{}{}
       \small{
@@ -292,7 +360,7 @@ use item list as is shown in the work experience section.
 % \end{itemize}
 }
     \CVSubheading
-      {{Printf} $|$ \emph{\small{Assembly (NASM), C, make}}}{\href{https://github.com/Dinichthys/Printf}{Printf on GitHub}}{}{}
+      {{Printf} $|$ \emph{\small{Assembly (NASM), make}}}{\href{https://github.com/Dinichthys/Printf}{Printf on GitHub}}{}{}
       \small{
       \textbf{Цель проекта:} Реализовать упрощённую версию функции языка C \textbf{"printf"} на языке ассемблера
       с поддержкой следующих спецификаторов форматной строки:
@@ -305,7 +373,7 @@ use item list as is shown in the work experience section.
     \item \textbf{Цветной вывод:}
     \begin{itemize}[nosep]
         \item При записи в стандартный поток вывода для смены цвета использовались escape-последовательности.
-        \item При записи в файл для определения цвета текста были использованы теги HTML (например, \lstinline|<font color="red">|)
+        \item При записи в файл для задания цвета текста были использованы теги HTML (например, \lstinline|<font color="red">|)
     \end{itemize}
     \item \textbf{Числа с плавающей точкой:} Использовался спецификатор \lstinline|%f| для записи чисел с плавающей точкой.
 \end{itemize}
@@ -332,7 +400,7 @@ use item list as is shown in the work experience section.
 % \vspace{0.1cm}
 \textbf{Было использовано три метода оптимизации:}
 \begin{itemize}[nosep]
-    \item \textbf{Массивы:} Использование массивов особенным образом позволило компилятору заменить операции над ними на SIMD инструкции.
+    \item \textbf{Массивы:} Использование массивов особенным образом позволило компилятору заменить операции над ними на SIMD-инструкции.
     \item \textbf{SIMD Инструкции:} Использование интринсиков позволило оптимизировать программу, потому что теперь стали исполняться инструкции сразу над набором данных.
     \item \textbf{Раскрутка цикла:} Раскрутка цикла помогла избежать зависимости по данным между инструкциями, из-за чего
     конвейер всегда был загружен.
@@ -346,72 +414,28 @@ use item list as is shown in the work experience section.
 %     \item \textbf{Loop unrolling:} Loop unrolling helps to execute data-independent instructions in a parallel way, because the pipeline of the processor will be full filled of instructions, which won't follow to \textbf{bubble} and \textbf{stall}.
 % \end{itemize}
       }
-      \CVSubheading
-      {{Stack} $|$ \emph{\small{C, make}}}{\href{https://github.com/Dinichthys/Stack}{Stack on GitHub}}{}{}
-      \small{
-      \textbf{Цель проекта:} Реализовать структуру данных \textbf{Стек} с некоторыми уровнями защиты:
-\begin{itemize}[nosep]
-  \item \textbf{Защита Хешированием:} Этот уровень защиты включал в себя подсчёт хеша структуры стека и его данных и сравнение полученного результата с ожидаемым значением.
-  \item \textbf{Канареечная защита:} Этот уровень защиты добавлял специальные маркерные значения (канарейки) до и после структуры стека и его данных для защиты их от уязвимостей по типу переполнения буфера, путём проверки на сохранность значений канареек.
-  \item \textbf{Инкапсуляция:} Этот уровень защиты запрещал пользователю работать со структурой стека напрямую, оставляя лишь работу через функции для того, чтобы исключить вероятность изменения данных каким-то образом в обход интерфейса.
-\end{itemize}
-%  Write a data structure \textbf{stack} with several levels of protections:
-% \begin{itemize}[nosep]
-%   \item \textbf{Hash Protection:} This level of protection will count a hash of stack's structure and it's elements and compare it with the correct value.
-%   \item \textbf{Canary Protection:} This level of protection will add the flag-elements before and after stack's structure and array of it's elements to protect it from vulnerabilities such as buffer overflow.
-%   \item \textbf{Encapsulation:} This level of protection will oblige the user to work with stack only with functions to exclude the possibility of changing the value of stack elements outside of functions.
-% \end{itemize}
-      }
-    \CVSubheading
-      {{CrackMe} $|$ \emph{\small{Assembly (TASM), C, make}}}{\href{https://github.com/Dinichthys/CrackMe}{CrackMe on GitHub}}{}{}
-      \small{
-      \textbf{Цель проекта:} Реализовать программу с двумя уязвимостями, обменяться ей с другим студентом и взломать чужую программу.
-      Так же было проведено сравнение трёх дизассемблеров на основе программы \textbf{'The Bomb Lab'}:
-\begin{itemize}[nosep]
-  \item \textbf{IDA}
-  \item \textbf{Radare2}
-  \item \textbf{Ghidra}
-\end{itemize}
-%       Also there was a research and comparison of three disassembler based on the program \textbf{'The Bomb Lab'}:
-% \begin{itemize}[nosep]
-%   \item \textbf{IDA}
-%   \item \textbf{Radare2}
-%   \item \textbf{Ghidra}
-% \end{itemize}
-      }
   \CVSubHeadingListEnd
 
 %-----HONORS AND AWARDS--------------------------------------------------------
-\section{Достижения за прошедший год}
-  \CVSubHeadingListStart
-%    \CVSubheading %Example
-%      {What}{When}
-%      {Short Description}{}
-    \CVSubheading
-      {Открытая олимпиада школьников}{2024}
-      {Победитель математической олимпиады от университета ИТМО.}{}
-    \CVSubheading
-      {Межрегиональная олимпиада школьников имени И.Я. Верченко}{2024}
-      {Призёр олимпиады по математике}{}
-    \CVSubheading
-      {Олимпиада школьников «Физтех»}{2024}
-      {Призёр олимпиады по математике}{}
-    \CVSubheading
-      {Отраслевая физико-математическая олимпиада школьников «Росатом»}{2024}
-      {Призёр олимпиады по математике}{}
-    \CVSubheading
-      {Отраслевая физико-математическая олимпиада школьников «Росатом»}{2024}
-      {Призёр олимпиады по физике}{}
-    \CVSubheading
-      {Региональный этап Всероссийской олимпиады школьников}{2024}
-      {Призёр регионального этапа ВСОШ по информатике}{}
-    \CVSubheading
-      {Региональный этап Всероссийской олимпиады школьников}{2024}
-      {Призёр регионального этапа ВСОШ по математике}{}
-    \CVSubheading
-      {Региональный этап Всероссийской олимпиады школьников}{2024}
-      {Призёр регионального этапа ВСОШ по физике}{}
-  \CVSubHeadingListEndRegional
+
+% \section{Достижения за прошедшие 2 года}
+%   \CVSubHeadingListStart
+% %    \CVSubheading %Example
+% %      {What}{When}
+% %      {Short Description}{}
+%     \CVSubheading
+%       {Открытая олимпиада школьников}{2024}
+%       {Победитель математической олимпиады от университета ИТМО.}{}
+%     \CVSubheading
+%       {Межрегиональная олимпиада школьников имени И.Я. Верченко}{2024}
+%       {Призёр олимпиады по математике}{}
+%     \CVSubheading
+%       {Олимпиада школьников «Физтех»}{2024}
+%       {Призёр олимпиады по математике}{}
+%     \CVSubheading
+%       {Отраслевая физико-математическая олимпиада школьников «Росатом»}{2024}
+%       {Призёр олимпиады по математике}{}
+%   \CVSubHeadingListEnd
 
 %-----INTERESTS-------------------------------------------------------------------
 \begin{comment}
@@ -423,7 +447,8 @@ recommends.
  \begin{itemize}[leftmargin=0.5cm, label={}]
     \small{\item{
      {Компиляторы}\\
-     {Архитектура CPU/GPU}\\
+     {Оптимизации}\\
+     {Нейронные сети}\\
      {Операционные системы}
     }}
  \end{itemize}
@@ -439,7 +464,7 @@ recommends.
 \section{Hard Skills}
  \begin{itemize}[leftmargin=0.5cm, label={}]
     \small{\item{
-     \textbf{Языки программирования}{: C, Assembly (NASM, TASM, x86-64), Python} \\
+     \textbf{Языки программирования}{: C, C++, Assembly (NASM, TASM, x86-64), Python, GoLang} \\
      \textbf{Инструменты}{: CMake, Make, IDA, Ghidra, Radare2, edb, gdb}
     }}
  \end{itemize}
@@ -480,3 +505,4 @@ recommends.
 %------------------------------------------------------------------------------
 
 \end{document}
+

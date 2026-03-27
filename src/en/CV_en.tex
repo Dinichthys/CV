@@ -1,0 +1,282 @@
+%------------------------------------------------------------------------------
+% CV in Latex
+% Author : Denis Melnikov
+% Based off of: https://github.com/sb2nov/resume   and Jake's Resume on Overleaf
+% Most recently updated version may be found at https://github.com/fizixmastr
+% License : MIT
+%------------------------------------------------------------------------------
+
+\documentclass[A4,11pt]{article}
+%\documentclass[letterpaper,11pt]{article} %For use in US
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{geometry}
+\usepackage{titleps}
+\usepackage{graphicx}
+\usepackage{soulutf8}
+\usepackage{booktabs}
+\usepackage{gensymb}
+\usepackage{array}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\input{glyphtounicode}
+
+%-----FONT OPTIONS-------------------------------------------------------------
+% serif
+ \usepackage{palatino}
+
+%-----PAGE SETUP---------------------------------------------------------------
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\textheight}{2cm}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
+\newcommand{\CVItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubheadingDenFirst}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubheadingDen}[2]{
+  \vspace{-14pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \text{\small#1} & \text{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
+\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
+\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%------------------------------------------------------------------------------
+% CV STARTS HERE  %
+%------------------------------------------------------------------------------
+\begin{document}
+
+%-----HEADING------------------------------------------------------------------
+\begin{minipage}[c]{0.05\textwidth}
+\-\
+\end{minipage}
+\begin{minipage}[c]{0.2\textwidth}
+\begin{tikzpicture}
+    \node at (0,-.7) {\includegraphics[width = 3cm]{Photo.png}};
+\end{tikzpicture}
+\hfill\vline\hfill
+\end{minipage}
+\begin{minipage}[c]{0.5\textwidth}
+    \textbf{\Huge \scshape{Denis Melnikov}} \\
+    \small{\faPhone} \hspace{0.1cm} \small{+7 931 511 58 76} \\
+    \faEnvelope \hspace{0.1cm} \href{den2005425@gmail.com}{\underline{melnikov.denis@phystech.edu}}\\
+    \faTelegram \hspace{0.1cm} \href{https://t.me/daikofnetu}{\underline{@daikofnetu}} \\
+    \faGithub \hspace{0.1cm} \href{https://www.github.com/dinichthys}{\underline{Dinichthys}} \\
+    \faMapMarker \hspace{0.1cm} {\underline{Moscow, Russia}} \\
+\end{minipage}
+
+%-----EDUCATION----------------------------------------------------------------
+\section{Education}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {{Bachelor's Degree $|$ \emph{\small{Second Year, GPA: 8.56}}}}{Sep. 2025 -- Present}
+      {School of Radio Engineering and Computer Technologies \\ Moscow Institute of Physics and Technology}{Dolgoprudny, Russia}
+\CVItemListEnd
+
+\section{Additional Courses}
+  \CVSubHeadingListStart
+    \CVSubheadingDenFirst
+      {{Course by Ilya Rudolfovich Dedinsky on C and Assembly Languages}}{Sep. 2024 -- May 2025}
+    \CVSubheadingDen
+      {{Course by Ilya Rudolfovich Dedinsky on C++}}{Sep. 2025 -- May 2026}
+    \CVSubheadingDen
+      {{Introduction to Computer Systems Architecture by SBER}}{Feb. 2026 -- May 2026}
+    \CVSubheadingDen
+      {{Introduction to Tensor Compilers by SBER}}{Feb. 2026 -- May 2026}
+  \CVSubHeadingListEnd
+
+%-----WORK EXPERIENCE----------------------------------------------------------
+\section{Work Experience}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {Go Compiler Development Team Experience}{July -- September 2025}
+      {}{}
+      \small{Intern (Assistant Engineer) at Huawei, full-time. \\ I enhanced a specific optimization pass in the compiler to handle more cases. As a result of my internship, my commit to the official compiler repository was accepted and the changes were merged.}
+  \CVSubHeadingListEnd
+
+\section{Teaching Experience}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {Mentorship Experience on Ilya Rudolfovich Dedinsky's Course}{Sep. 2025 -- May 2026}
+      {}{}
+      \small{I worked as a mentor on Ilya Rudolfovich Dedinsky's C and Assembly Languages course for first-year students throughout the full academic year.}
+  \CVSubHeadingListEnd
+
+%-----PROJECTS AND RESEARCH----------------------------------------------------
+\section{Projects}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {{Compiler} $|$ \emph{\small{C, CMake, NASM}}}{\href{https://github.com/Dinichthys/Compiler}{Compiler on GitHub}}{}{}
+      \small{
+      \textbf{Project Goal:} Implement a compiler for a custom programming language targeting a custom architecture, as well as NASM.
+      The compiler front-end tokenizes the source code and builds an Abstract Syntax Tree (AST) using recursive descent parsing, which is then converted to an Intermediate Representation (IR).
+
+      The IR is then optimized by the middle-end, which performs the following optimizations:
+\begin{itemize}[nosep]
+  \item \textbf{Dead Code Elimination:} Removes unreachable code.
+  \item \textbf{Common Subexpression Elimination:} Computes identical subexpressions only once.
+  \item \textbf{Unused Variable Elimination:} Removes unused variables from the program.
+\end{itemize}
+
+      Finally, the back-end translates the IR into assembly instructions for a functional simulator,
+      which subsequently converts them to machine code and executes them.
+      }
+    \CVSubheading
+      {{LLVMPass} $|$ \emph{\small{C++, CMake}}}{\href{https://github.com/Dinichthys/LLVMPass}{LLVMPass on GitHub}}{}{}
+      \small{
+      \textbf{Project Goal:}
+       Implement an LLVM pass that constructs Control Flow Graphs (CFG) and Data Flow Graphs (DFG), instruments LLVM IR with logging instructions, collects the resulting profile, and visualizes hot/cold functions and basic blocks on the graph using colors and call counts.
+}
+    \CVSubheading
+      {{Physics} $|$ \emph{\small{C++, CMake}}}{\href{https://github.com/Dinichthys/Physics}{Physics on GitHub}}{}{}
+      \small{
+      \textbf{Project Goal:} Create a physics constructor for various objects with support for light reflection and refraction, as well as plugin extensibility. The final version included two plugins: a graphics library plugin (allowing switching between SFML and SDL without code changes) and a drawing overlay plugin (for rendering various shapes on top of the screen).
+
+      My plugin implementations can be found in the repositories: \href{https://github.com/Dinichthys/DR4Backend}{DR4Backend} (graphics library plugin) and \href{https://github.com/Dinichthys/GeomPrimitiveBackend}{GeomPrimitiveBackend} (drawing overlay plugin).
+}
+    \CVSubheading
+      {{SPU} $|$ \emph{\small{C, Make}}}{\href{https://github.com/Dinichthys/SPU}{SPU on GitHub}}{}{}
+      \small{
+      \textbf{Project Goal:}
+       Implement a functional processor simulator with three components:
+\begin{itemize}[nosep]
+  \item \textbf{Assembler:} Translates assembly instructions into binary representation.
+  \item \textbf{Disassembler:} Restores assembly instructions from binary representation.
+  \item \textbf{Processor:} Executes instructions described in binary format.
+\end{itemize}
+}
+    \CVSubheading
+      {{Printf} $|$ \emph{\small{Assembly (NASM), Make}}}{\href{https://github.com/Dinichthys/Printf}{Printf on GitHub}}{}{}
+      \small{
+      \textbf{Project Goal:} Implement a simplified version of the C \textbf{printf} function in assembly language
+      supporting the following format string specifiers:
+\lstinline|%c|, \lstinline|%s|, \lstinline|%d|, \lstinline|%b|, \lstinline|%o|, \lstinline|%x|, and \lstinline|%f|.
+Specifier parsing is performed using a \textbf{JUMP table}.\\
+\textbf{Additional Implemented Features:}
+\begin{itemize}[nosep]
+    \item \textbf{File Output:} Supports writing formatted output to files.
+    \item \textbf{Colored Output:}
+    \begin{itemize}[nosep]
+        \item For stdout: ANSI escape sequences used for color changes.
+        \item For file output: HTML-style tags used for text coloring (e.g., \lstinline|<font color="red">|)
+    \end{itemize}
+    \item \textbf{Floating-Point Support:} Implements the \lstinline|%f| specifier for floating-point numbers.
+\end{itemize}
+      }
+    \CVSubheading
+      {{Mandelbrot Set} $|$ \emph{\small{C, CMake}}}{\href{https://github.com/Dinichthys/Mandelbrot}{Mandelbrot Set on GitHub}}{}{}
+      \small{
+      \textbf{Project Goal:} Optimize a program that renders the Mandelbrot set using various techniques. \\
+\textbf{Three Optimization Methods Applied:}
+\begin{itemize}[nosep]
+    \item \textbf{Array Optimization:} Strategic array usage enabled the compiler to replace operations with SIMD instructions.
+    \item \textbf{SIMD Intrinsics:} Using intrinsics allowed parallel processing of multiple data elements per instruction.
+    \item \textbf{Loop Unrolling:} Unrolling loops reduced data dependencies between instructions, keeping the processor pipeline fully utilized.
+\end{itemize}
+      }
+  \CVSubHeadingListEnd
+
+%-----INTERESTS-------------------------------------------------------------------
+\section{Interests}
+ \begin{itemize}[leftmargin=0.5cm, label={}]
+    \small{\item{
+     {Compilers}\\
+     {Optimizations}\\
+     {Neural Networks}\\
+     {Operating Systems}
+    }}
+ \end{itemize}
+
+%-----HARD SKILLS-------------------------------------------------------------------
+\section{Hard Skills}
+ \begin{itemize}[leftmargin=0.5cm, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: C, C++, Assembly (NASM, TASM, x86-64), Python, Go} \\
+     \textbf{Tools}{: CMake, Make, IDA, Ghidra, Radare2, edb, GDB}
+    }}
+ \end{itemize}
+
+%-----LANGUAGES-------------------------------------------------------------------
+\section{Languages}
+ \begin{itemize}[leftmargin=0.5cm, label={}]
+    \small{\item{
+\textbf{Russian:} Native \\
+\textbf{English:} B1 (Intermediate)
+    }}
+ \end{itemize}
+
+%-----SOFT SKILLS-------------------------------------------------------------------
+\section{Soft Skills}
+ \begin{itemize}[leftmargin=0.5cm, label={}]
+    \small{\item{
+     {Strong Communication Skills}\\
+     {Self-Confident}\\
+     {Responsible}
+    }}
+ \end{itemize}
+
+\end{document}
